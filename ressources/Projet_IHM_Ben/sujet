@@ -1,0 +1,26 @@
+Projet IHM
+
+Nouveau sondé :
+	date de naissance / sexe
+	était civil	(celib, marié ...)
+	Nbr de personnes vivant au foyer, Nbr d'enfant, animaux domestiques
+	tranche des revenus du foyer
+	--> génère numéro de sondé
+
+Sondage :
+	marques yaourt connus
+	marques yaourt acheté 6 dernier mois + fréquence
+	Quel type 
+
+Statistique :
+	Conso de tel type de yaourt (pourcentage)
+	Conso de yaourt x parmi les types
+	tranche d'âge moyenne pour anti-cholesterol
+	Nbr d'enfant moyen parmi foyer pour yaourt à boire
+	Rapport entre conso yaourt et revenus
+	Part homme/femme yaourt allégés
+
+Sauvegarde données :
+	Données chargé au démarrage + sauvegarder à la fermeture
+	fichier XML ?	
+	
