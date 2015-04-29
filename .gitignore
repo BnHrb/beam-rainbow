@@ -29,3 +29,6 @@
 
 # MAC OS
 *.DS_Store
+
+# Qt
+*.pro.user
