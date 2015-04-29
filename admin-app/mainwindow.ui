@@ -6,47 +6,232 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
-    <height>430</height>
+    <width>967</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>80</y>
-      <width>161</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Fenêtre principale</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>160</y>
-      <width>191</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nouveau sondage</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="homePage">
+       <widget class="QPushButton" name="surveyButton">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>160</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sondages</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="surveyPage">
+       <widget class="QListWidget" name="surveyListWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>601</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Sondage 1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sondage 2</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="surveyEditButton">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>70</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="surveyDeleteButton">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>110</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="surveyAddButton">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>30</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page">
+       <widget class="QLabel" name="newSurveyLabel">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>20</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nouveau sondage</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="nameSurveyLabel">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>50</y>
+          <width>59</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom :</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="questionsListWidget">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>120</y>
+          <width>471</width>
+          <height>192</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Question 1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Question 2</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLineEdit" name="nameSurveyLineEdit">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>50</y>
+          <width>511</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="questionsLabel">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>100</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Questions :</string>
+        </property>
+       </widget>
+       <widget class="QDialogButtonBox" name="newSurveyButtonBox">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>320</y>
+          <width>164</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+        <property name="centerButtons">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addQuestionButton">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>120</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="editQuestionButton">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>160</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="deleteQuestionButton">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>200</y>
+          <width>115</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>810</width>
+     <width>967</width>
      <height>22</height>
     </rect>
    </property>
