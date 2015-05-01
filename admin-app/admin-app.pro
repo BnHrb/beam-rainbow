@@ -21,3 +21,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     questiondialog.ui
+
+DISTFILES += \
+    test.json

@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "QFile"
+#include "QJsonDocument"
+#include "QDebug"
+#include "QJsonObject"
+#include "QJsonArray"
 
 namespace Ui {
 class MainWindow;
@@ -26,8 +31,17 @@ private slots:
 
     void on_addQuestionButton_clicked();
 
+    void on_newSurveyButtonBox_rejected();
+
+    void on_newSurveyButtonBox_accepted();
+
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::MainWindow *ui;
+    QJsonObject jsonSondages;
 };
 
 #endif // MAINWINDOW_H

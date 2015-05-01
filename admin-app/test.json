@@ -1,0 +1,57 @@
+{
+   "sondages": [
+    {
+      "titre": "sondage 1",
+      "questions":
+       [
+            {   "label":"question 1",
+                "réponses":
+            [
+                    {"label":"réponse a", "type":"texte"},
+                    {"label":"réponse b", "type":"texte"},
+                    {"label":"réponse c", "type":"nombre"}
+            ]},
+            {   "label":"question 2",
+                "réponses":
+            [
+                    {"label":"réponse 1", "type":"nombre"},
+                    {"label":"réponse 2", "type":"texte"},
+                    {"label":"réponse 3", "type":"nombre"}
+            ]},
+            {   "label":"question 3",
+                "réponses":
+            [
+                    {"label":"réponse aa", "type":"nombre"},
+                    {"label":"réponse bb", "type":"texte"},
+                    {"label":"réponse cc", "type":"texte"}
+            ]}
+       ]
+    },
+    {
+      "titre": "sondage 1",
+      "questions":
+       [
+            {   "label":"question 1",
+                "réponses":
+            [
+                    {"label":"réponse a", "type":"texte"},
+                    {"label":"réponse b", "type":"texte"},
+                    {"label":"réponse c", "type":"nombre"}
+            ]},
+            {   "label":"question 2",
+                "réponses":
+            [
+                    {"label":"réponse 1", "type":"nombre"},
+                    {"label":"réponse 2", "type":"texte"},
+                    {"label":"réponse 3", "type":"nombre"}
+            ]},
+            {   "label":"question 3",
+                "réponses":
+            [
+                    {"label":"réponse aa", "type":"nombre"},
+                    {"label":"réponse bb", "type":"texte"},
+                    {"label":"réponse cc", "type":"texte"}
+            ]}
+       ]
+    }]
+}
