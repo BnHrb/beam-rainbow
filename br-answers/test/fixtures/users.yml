@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  naissance: 2015-04-30
+  sexe: MyString
+  etat_civil: MyString
+  pop_foyer: 1
+  pop_enfant: 1
+  pop_animaux: 1
+  revenus: MyString
+
+two:
+  naissance: 2015-04-30
+  sexe: MyString
+  etat_civil: MyString
+  pop_foyer: 1
+  pop_enfant: 1
+  pop_animaux: 1
+  revenus: MyString

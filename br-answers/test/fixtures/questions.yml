@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valeur: MyString
+  choix_multiple: false
+  champs_libre: false
+  champs_libre_int: false
+
+two:
+  valeur: MyString
+  choix_multiple: false
+  champs_libre: false
+  champs_libre_int: false
