@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,5 +23,4 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     questiondialog.ui
 
-DISTFILES += \
-    test.json
+DISTFILES +=
