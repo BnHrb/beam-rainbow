@@ -23,15 +23,21 @@ void MainWindow::on_surveyButton_clicked()
     query.bindValue(":mdp", ui->PasswordLineEdit->text());
     query.exec();
 
+    ui->surveyListWidget->clear();
+
     if(query.next()){
         QSqlQuery sondages;
-        sondages.prepare("SELECT nom FROM sondages");
+        sondages.prepare("SELECT * FROM sondages");
         sondages.bindValue(":id", query.value(0));
         sondages.exec();
 
         while (sondages.next()) {
-            QString titre = sondages.value(0).toString();
-            ui->surveyListWidget->addItem(QString(titre));
+            QListWidgetItem *item = new QListWidgetItem(sondages.value("nom").toString());
+            QVariant v;
+            v.setValue(sondages.value("id").toInt());
+            item->setData(Qt::UserRole, v);
+
+            ui->surveyListWidget->addItem(item);
         }
 
         ui->stackedWidget->setCurrentIndex(1);
@@ -60,9 +66,9 @@ void MainWindow::on_deleteQuestionButton_clicked()
 
 void MainWindow::on_addQuestionButton_clicked()
 {
-    QuestionDialog qDialog;
-    qDialog.setModal(true);
-    qDialog.exec();
+    QuestionDialog *qDialog = new QuestionDialog(ui->surveyListWidget->currentItem()->data(Qt::UserRole).value<int>(),0, *ui->questionsListWidget, this);
+    qDialog->setModal(true);
+    qDialog->exec();
 }
 
 void MainWindow::on_newSurveyButtonBox_rejected()
@@ -88,14 +94,18 @@ void MainWindow::on_buttonBox_rejected()
 void MainWindow::on_surveyEditButton_clicked()
 {
     QSqlQuery query;
-    query.prepare("SELECT titre FROM sondages WHERE titre=(:titre)");
-    query.bindValue(":titre", ui->surveyListWidget->currentItem()->text());
+    query.prepare("SELECT * FROM questions WHERE sondage_id=(:id)");
+    query.bindValue(":id", ui->surveyListWidget->currentItem()->data(Qt::UserRole).value<int>());
     query.exec();
 
     ui->nameSurveyLineEdit->setText(ui->surveyListWidget->currentItem()->text());
     while(query.next()){
-        QString valeur = query.value(0).toString();
-        ui->questionsListWidget->addItem(QString(valeur));
+        QListWidgetItem *item = new QListWidgetItem(query.value("valeur").toString());
+        QVariant v;
+        v.setValue(query.value("id").toInt());
+        item->setData(Qt::UserRole, v);
+
+        ui->questionsListWidget->addItem(item);
     }
 
     ui->stackedWidget->setCurrentIndex(2);
@@ -103,5 +113,7 @@ void MainWindow::on_surveyEditButton_clicked()
 
 void MainWindow::on_editQuestionButton_clicked()
 {
-    ui->questionsListWidget->currentItem()->text();
+    QuestionDialog *qDialog = new QuestionDialog(ui->surveyListWidget->currentItem()->data(Qt::UserRole).value<int>(),1,*ui->questionsListWidget, this);
+    qDialog->setModal(true);
+    qDialog->exec();
 }

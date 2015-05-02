@@ -2,7 +2,10 @@
 #define QUESTIONDIALOG_H
 
 #include <QDialog>
-#include "QComboBox"
+#include <QComboBox>
+#include <QListWidget>
+#include <QDebug>
+#include <QSqlQuery>
 
 namespace Ui {
 class QuestionDialog;
@@ -13,13 +16,19 @@ class QuestionDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit QuestionDialog(QWidget *parent = 0);
+    explicit QuestionDialog(int s_id, bool flag, QListWidget &questions, QWidget *parent = 0);
     ~QuestionDialog();
+    QListWidget *qList;
+    int sondage_id;
+    bool edit;
+    int question_id;
 
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_buttonBox_accepted();
 
 private:
     Ui::QuestionDialog *ui;
