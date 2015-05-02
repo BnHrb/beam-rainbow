@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlQuery>
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +35,10 @@ private slots:
     void on_buttonBox_accepted();
 
     void on_buttonBox_rejected();
+
+    void on_surveyEditButton_clicked();
+
+    void on_editQuestionButton_clicked();
 
 private:
     Ui::MainWindow *ui;

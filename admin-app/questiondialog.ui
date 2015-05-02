@@ -80,7 +80,7 @@
     <number>2</number>
    </property>
    <attribute name="horizontalHeaderVisible">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <attribute name="horizontalHeaderCascadingSectionResizes">
     <bool>false</bool>
@@ -98,7 +98,7 @@
     <bool>true</bool>
    </attribute>
    <attribute name="verticalHeaderVisible">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <attribute name="verticalHeaderCascadingSectionResizes">
     <bool>false</bool>
@@ -146,7 +146,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Accepter d'autres réponses</string>
+    <string>Accepter plusieurs réponses</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">

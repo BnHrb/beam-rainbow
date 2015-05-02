@@ -15,10 +15,8 @@ int main(int argc, char *argv[])
     if (!createConnection()){
 
         qDebug() << "Not connected!";
-        return 1;
     }
     else{
-
         qDebug() << "Connected!";
 
         QSqlQuery query;
@@ -28,9 +26,8 @@ int main(int argc, char *argv[])
             QString name = query.value(0).toString();
             qDebug() << "name:" << name;
         }
-
-        return 0;
     }
+
     MainWindow w;
     w.show();
 

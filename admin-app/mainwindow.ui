@@ -18,20 +18,72 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="homePage">
        <widget class="QPushButton" name="surveyButton">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>130</y>
+          <x>390</x>
+          <y>220</y>
           <width>131</width>
           <height>31</height>
          </rect>
         </property>
         <property name="text">
-         <string>Sondages</string>
+         <string>Se connecter</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="UserLineEdit">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>90</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>La bonne laitière</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="PasswordLineEdit">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>140</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>miammiam</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>90</y>
+          <width>59</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>218</x>
+          <y>140</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Mot de passe :</string>
         </property>
        </widget>
       </widget>
@@ -45,16 +97,6 @@
           <height>291</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>Sondage 1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sondage 2</string>
-         </property>
-        </item>
        </widget>
        <widget class="QPushButton" name="surveyEditButton">
         <property name="geometry">
@@ -145,16 +187,6 @@
           <height>192</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>Question 1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Question 2</string>
-         </property>
-        </item>
        </widget>
        <widget class="QLineEdit" name="nameSurveyLineEdit">
         <property name="geometry">
