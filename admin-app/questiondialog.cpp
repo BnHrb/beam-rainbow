@@ -10,9 +10,9 @@ QuestionDialog::QuestionDialog(int s_id, bool flag, QListWidget &questions, QWid
     qList = &questions;
     sondage_id = s_id;
     edit = flag;
-    question_id = qList->currentItem()->data(Qt::UserRole).value<int>();
 
     if(edit){
+        question_id = qList->currentItem()->data(Qt::UserRole).value<int>();
         ui->plainTextEdit->appendPlainText(qList->currentItem()->text());
 
         QSqlQuery query;
@@ -68,6 +68,8 @@ void QuestionDialog::on_pushButton_clicked()
 void QuestionDialog::on_pushButton_2_clicked()
 {
     //ui->tableWidget->removeRow(ui->tableWidget->currentRow());
+    if(ui->listWidget->currentItem()->data(Qt::UserRole).value<int>() > 0)
+        remove << ui->listWidget->currentItem()->data(Qt::UserRole).value<int>();
     delete ui->listWidget->currentItem();
 }
 
@@ -83,18 +85,18 @@ void QuestionDialog::on_buttonBox_accepted()
         query.exec();
 
         int id = query.lastInsertId().toInt();
-        qWarning() << id;
         while(query.next())
             id = query.value(0).toInt();
 
+        QSqlDatabase::database().transaction();
+        QSqlQuery answer;
         for(int i=0; i < ui->listWidget->count(); i++){
-            qWarning() << ui->listWidget->item(i)->text();
-            QSqlQuery answer;
             answer.prepare("INSERT INTO choixes (valeur, question_id) VALUES (:valeur, :id)");
             answer.bindValue(":valeur", ui->listWidget->item(i)->text());
             answer.bindValue(":id", id);
             answer.exec();
         }
+        QSqlDatabase::database().commit();
 
         QListWidgetItem *item = new QListWidgetItem(ui->plainTextEdit->toPlainText());
         QVariant v;
@@ -111,8 +113,9 @@ void QuestionDialog::on_buttonBox_accepted()
         query.bindValue(":id", question_id);
         query.exec();
 
+        QSqlDatabase::database().transaction();
+        QSqlQuery answer;
         for(int i=0; i < ui->listWidget->count(); i++){
-            QSqlQuery answer;
             if(ui->listWidget->item(i)->data(Qt::UserRole).value<int>() > 0){
                 answer.prepare("UPDATE choixes SET valeur = :valeur WHERE id = :id");
                 answer.bindValue(":valeur", ui->listWidget->item(i)->text());
@@ -125,6 +128,14 @@ void QuestionDialog::on_buttonBox_accepted()
                 answer.bindValue(":id", question_id);
                 answer.exec();
             }
+        }
+        QSqlDatabase::database().commit();
+
+        for(int i=0; i < remove.size(); i++){
+            QSqlQuery del;
+            del.prepare("DELETE FROM choixes WHERE id=(:id)");
+            del.bindValue(":id", remove[i]);
+            del.exec();
         }
 
         qList->currentItem()->setText(ui->plainTextEdit->toPlainText());

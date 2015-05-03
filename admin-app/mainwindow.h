@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    int entreprise_id;
 
 private slots:
     void on_surveyButton_clicked();
@@ -32,13 +33,11 @@ private slots:
 
     void on_newSurveyButtonBox_accepted();
 
-    void on_buttonBox_accepted();
-
-    void on_buttonBox_rejected();
-
     void on_surveyEditButton_clicked();
 
     void on_editQuestionButton_clicked();
+
+    void on_logoutPushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

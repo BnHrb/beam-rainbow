@@ -22,6 +22,7 @@ public:
     int sondage_id;
     bool edit;
     int question_id;
+    QList<int> remove;
 
 private slots:
     void on_pushButton_clicked();
