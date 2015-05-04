@@ -18,14 +18,6 @@ int main(int argc, char *argv[])
     }
     else{
         qDebug() << "Connected!";
-
-        QSqlQuery query;
-        query.exec("SELECT name FROM student");
-
-        while (query.next()) {
-            QString name = query.value(0).toString();
-            qDebug() << "name:" << name;
-        }
     }
 
     MainWindow w;

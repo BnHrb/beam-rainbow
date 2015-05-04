@@ -51,14 +51,19 @@ void MainWindow::on_surveyDeleteButton_clicked()
 {
     int sondage_id = ui->surveyListWidget->currentItem()->data(Qt::UserRole).value<int>();
 
-    QSqlQuery query;
-    query.prepare("DELETE c.* FROM choixes c INNER JOIN questions q ON q.id = c.question_id WHERE (q.sondage_id = :id) ;"
-                  "DELETE FROM questions WHERE sondage_id = :id ;"
-                  "DELETE FROM sondages WHERE id = :id");
-    query.bindValue(":id", sondage_id);
-    query.exec();
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Suppression", "Êtes-vous sûr de vouloir supprimer ce sondage ?", QMessageBox::Yes|QMessageBox::No);
 
-    delete ui->surveyListWidget->currentItem();
+    if(reply == QMessageBox::Yes){
+        QSqlQuery query;
+        query.prepare("DELETE c.* FROM choixes c INNER JOIN questions q ON q.id = c.question_id WHERE (q.sondage_id = :id) ;"
+                      "DELETE FROM questions WHERE sondage_id = :id ;"
+                      "DELETE FROM sondages WHERE id = :id");
+        query.bindValue(":id", sondage_id);
+        query.exec();
+
+        delete ui->surveyListWidget->currentItem();
+    }
 }
 
 void MainWindow::on_surveyAddButton_clicked()

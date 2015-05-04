@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
