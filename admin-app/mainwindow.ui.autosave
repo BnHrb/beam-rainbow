@@ -459,7 +459,7 @@ QGroupBox::title {
          </rect>
         </property>
         <property name="text">
-         <string>Ajouter un résultat</string>
+         <string>Ajouter un résultat...</string>
         </property>
        </widget>
        <widget class="QCustomPlot" name="widget_2" native="true">

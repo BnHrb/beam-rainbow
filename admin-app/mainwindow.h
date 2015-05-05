@@ -47,6 +47,10 @@ private slots:
 
     void on_actionAfficher_aide_triggered();
 
+    void on_surveySeeResults_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

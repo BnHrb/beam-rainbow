@@ -212,3 +212,13 @@ void MainWindow::on_actionAfficher_aide_triggered()
     hDialog->setModal(true);
     hDialog->exec();
 }
+
+void MainWindow::on_surveySeeResults_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}

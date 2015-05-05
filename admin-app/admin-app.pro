@@ -17,11 +17,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     questiondialog.cpp \
-    helpdialog.cpp
+    helpdialog.cpp \
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     questiondialog.h \
-    helpdialog.h
+    helpdialog.h \
+    qcustomplot.h
 
 FORMS    += mainwindow.ui \
     questiondialog.ui \
