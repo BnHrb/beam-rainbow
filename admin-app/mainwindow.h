@@ -22,6 +22,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     int entreprise_id;
+    int current_sondage_id;
 
 private slots:
     void on_surveyButton_clicked();
