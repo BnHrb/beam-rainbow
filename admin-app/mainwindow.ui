@@ -31,7 +31,7 @@ QGroupBox::title {
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="homePage">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -188,197 +188,182 @@ QGroupBox::title {
        </layout>
       </widget>
       <widget class="QWidget" name="surveyPage">
-       <widget class="QListWidget" name="surveyListWidget">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>601</width>
-          <height>291</height>
-         </rect>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <property name="bottomMargin">
+         <number>0</number>
         </property>
-       </widget>
-       <widget class="QPushButton" name="surveyEditButton">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>160</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Modifier</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="surveyDeleteButton">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>200</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Supprimer</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="surveyAddButton">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>120</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ajouter</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="logoutPushButton">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>320</y>
-          <width>141</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Se déconnecter</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>30</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Voir résultats</string>
-        </property>
-       </widget>
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0" colspan="2">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>Sondages</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="1">
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="text">
+                  <string>Voir résultats</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="surveyAddButton">
+                 <property name="text">
+                  <string>Ajouter</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="surveyEditButton">
+                 <property name="text">
+                  <string>Modifier</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="surveyDeleteButton">
+                 <property name="text">
+                  <string>Supprimer</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="0">
+              <widget class="QListWidget" name="surveyListWidget"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="logoutPushButton">
+            <property name="text">
+             <string>Se déconnecter</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+       <zorder>surveyEditButton</zorder>
+       <zorder>surveyDeleteButton</zorder>
+       <zorder>surveyAddButton</zorder>
+       <zorder>pushButton_2</zorder>
+       <zorder>groupBox_2</zorder>
+       <zorder>logoutPushButton</zorder>
+       <zorder>logoutPushButton</zorder>
+       <zorder>logoutPushButton</zorder>
+       <zorder>label_3</zorder>
+       <zorder></zorder>
       </widget>
       <widget class="QWidget" name="page">
-       <widget class="QLabel" name="newSurveyLabel">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>20</y>
-          <width>121</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Nouveau sondage</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="nameSurveyLabel">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>50</y>
-          <width>59</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Nom :</string>
-        </property>
-       </widget>
-       <widget class="QListWidget" name="questionsListWidget">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>120</y>
-          <width>471</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="nameSurveyLineEdit">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>50</y>
-          <width>511</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="questionsLabel">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>100</y>
-          <width>101</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Questions :</string>
-        </property>
-       </widget>
-       <widget class="QDialogButtonBox" name="newSurveyButtonBox">
-        <property name="geometry">
-         <rect>
-          <x>600</x>
-          <y>310</y>
-          <width>164</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="standardButtons">
-         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-        </property>
-        <property name="centerButtons">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="addQuestionButton">
-        <property name="geometry">
-         <rect>
-          <x>550</x>
-          <y>120</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ajouter</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="editQuestionButton">
-        <property name="geometry">
-         <rect>
-          <x>550</x>
-          <y>160</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Modifier</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="deleteQuestionButton">
-        <property name="geometry">
-         <rect>
-          <x>550</x>
-          <y>200</y>
-          <width>115</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Supprimer</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Nouveau sondage</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="nameSurveyLabel">
+                 <property name="text">
+                  <string>Intitulé :</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="nameSurveyLineEdit"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+            <zorder></zorder>
+            <zorder>nameSurveyLineEdit</zorder>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Questions</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_8">
+             <item row="0" column="0">
+              <widget class="QListWidget" name="questionsListWidget"/>
+             </item>
+             <item row="0" column="1">
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QPushButton" name="addQuestionButton">
+                 <property name="text">
+                  <string>Ajouter</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="editQuestionButton">
+                 <property name="text">
+                  <string>Modifier</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="deleteQuestionButton">
+                 <property name="text">
+                  <string>Supprimer</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QDialogButtonBox" name="newSurveyButtonBox">
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+            </property>
+            <property name="centerButtons">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
