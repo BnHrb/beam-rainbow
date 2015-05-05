@@ -6,6 +6,7 @@
 #include <QListWidget>
 #include <QDebug>
 #include <QSqlQuery>
+#include <QMessageBox>
 
 namespace Ui {
 class QuestionDialog;
