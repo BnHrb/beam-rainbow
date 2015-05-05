@@ -215,7 +215,16 @@ void MainWindow::on_actionAfficher_aide_triggered()
 
 void MainWindow::on_surveySeeResults_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+
+    if(ui->surveyListWidget->currentItem() == NULL){
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::warning(this, "Attention", "Vous avez seléctionné aucun sondage.", QMessageBox::Ok);
+    }
+    else{
+        current_sondage_id = ui->surveyListWidget->currentItem()->data(Qt::UserRole).value<int>();
+        ui->label_chart_title->setText(ui->surveyListWidget->currentItem()->text());
+        ui->stackedWidget->setCurrentIndex(3);
+    }
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -225,7 +234,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    chartcreate *chartDialog = new chartcreate(this, 15);
+    chartcreate *chartDialog = new chartcreate(this, current_sondage_id);
     chartDialog->setModal(true);
     chartDialog->exec();
 }
