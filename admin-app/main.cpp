@@ -5,6 +5,7 @@
 #include <QtSql/QSqlDriver>
 #include <QtSql/QSqlQuery>
 #include <QDebug>
+#include <QTranslator>
 
 bool createConnection();
 
@@ -19,6 +20,10 @@ int main(int argc, char *argv[])
     else{
         qDebug() << "Connected!";
     }
+
+    QTranslator trans(0);
+    trans.load("qt_fr", ".");
+    a.installTranslator(&trans);
 
     MainWindow w;
     w.show();

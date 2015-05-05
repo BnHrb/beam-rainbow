@@ -17,11 +17,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_surveyButton_clicked()
 {
+    if(ui->UserLineEdit->text() == "" || ui->PasswordLineEdit->text() == ""){
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::warning(this, "Attention", "Vous n'avez pas rempli tous les champs.", QMessageBox::Ok);
+    }
     QSqlQuery query;
     query.prepare("SELECT * FROM entreprises WHERE nom=(:nom) AND mdp=(:mdp)");
     query.bindValue(":nom", ui->UserLineEdit->text());
     query.bindValue(":mdp", ui->PasswordLineEdit->text());
     query.exec();
+
+    ui->newSurveyButtonBox->button(QDialogButtonBox::Cancel)->setText("Annuler");
 
     ui->surveyListWidget->clear();
 

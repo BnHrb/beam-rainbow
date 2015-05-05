@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Beam Rainbow</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QGroupBox {
@@ -27,11 +27,11 @@ QGroupBox::title {
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout_10">
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="homePage">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -286,9 +286,75 @@ QGroupBox::title {
        <zorder></zorder>
       </widget>
       <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout_10">
-        <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
          <layout class="QGridLayout" name="gridLayout_9">
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Questions</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_8">
+             <item row="0" column="0">
+              <widget class="QListWidget" name="questionsListWidget"/>
+             </item>
+             <item row="0" column="1">
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <spacer name="verticalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="addQuestionButton">
+                 <property name="text">
+                  <string>Ajouter</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="editQuestionButton">
+                 <property name="text">
+                  <string>Modifier</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="deleteQuestionButton">
+                 <property name="text">
+                  <string>Supprimer</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_3">
             <property name="title">
@@ -312,43 +378,6 @@ QGroupBox::title {
             </layout>
             <zorder></zorder>
             <zorder>nameSurveyLineEdit</zorder>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="title">
-             <string>Questions</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_8">
-             <item row="0" column="0">
-              <widget class="QListWidget" name="questionsListWidget"/>
-             </item>
-             <item row="0" column="1">
-              <layout class="QVBoxLayout" name="verticalLayout_6">
-               <item>
-                <widget class="QPushButton" name="addQuestionButton">
-                 <property name="text">
-                  <string>Ajouter</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="editQuestionButton">
-                 <property name="text">
-                  <string>Modifier</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="deleteQuestionButton">
-                 <property name="text">
-                  <string>Supprimer</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
            </widget>
           </item>
           <item row="2" column="0">

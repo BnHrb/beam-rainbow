@@ -11,6 +11,8 @@ QuestionDialog::QuestionDialog(int s_id, bool flag, QListWidget &questions, QWid
     sondage_id = s_id;
     edit = flag;
 
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Annuler");
+
     if(edit){
         question_id = qList->currentItem()->data(Qt::UserRole).value<int>();
         ui->plainTextEdit->appendPlainText(qList->currentItem()->text());
@@ -58,7 +60,7 @@ QuestionDialog::~QuestionDialog()
 
 void QuestionDialog::on_pushButton_clicked()
 {
-    QListWidgetItem *item = new QListWidgetItem(QString(""));
+    QListWidgetItem *item = new QListWidgetItem(QString("Nouvelle réponse"));
     item->setFlags(item->flags() | Qt::ItemIsEditable);
     ui->listWidget->addItem(item);
     ui->listWidget->item(ui->listWidget->count()-1)->setSelected(true);

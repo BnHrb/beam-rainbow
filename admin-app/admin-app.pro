@@ -12,6 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = admin-app
 TEMPLATE = app
+TRANSLATIONS = qt_fr.qm
 
 
 SOURCES += main.cpp\
