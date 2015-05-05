@@ -59,7 +59,7 @@ QGroupBox::title {
                  <item>
                   <widget class="QLabel" name="label">
                    <property name="text">
-                    <string>Nom :</string>
+                    <string>Nom de l''entreprise :</string>
                    </property>
                   </widget>
                  </item>
@@ -89,6 +89,21 @@ QGroupBox::title {
                 <layout class="QVBoxLayout" name="verticalLayout_3">
                  <item>
                   <widget class="QLineEdit" name="UserLineEdit">
+                   <property name="toolTip">
+                    <string>Nom de l'entreprise</string>
+                   </property>
+                   <property name="statusTip">
+                    <string/>
+                   </property>
+                   <property name="whatsThis">
+                    <string/>
+                   </property>
+                   <property name="accessibleName">
+                    <string/>
+                   </property>
+                   <property name="accessibleDescription">
+                    <string/>
+                   </property>
                    <property name="text">
                     <string>La bonne laitière</string>
                    </property>
@@ -96,6 +111,9 @@ QGroupBox::title {
                  </item>
                  <item>
                   <widget class="QLineEdit" name="PasswordLineEdit">
+                   <property name="toolTip">
+                    <string>Mot de passe</string>
+                   </property>
                    <property name="text">
                     <string>miammiam</string>
                    </property>
@@ -224,6 +242,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="surveyAddButton">
+                 <property name="toolTip">
+                  <string>Ajouter un nouveau sondage</string>
+                 </property>
                  <property name="text">
                   <string>Ajouter</string>
                  </property>
@@ -231,6 +252,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="surveyEditButton">
+                 <property name="toolTip">
+                  <string>Modifier un sondage existant</string>
+                 </property>
                  <property name="text">
                   <string>Modifier</string>
                  </property>
@@ -238,6 +262,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="surveyDeleteButton">
+                 <property name="toolTip">
+                  <string>Supprimer un sondage</string>
+                 </property>
                  <property name="text">
                   <string>Supprimer</string>
                  </property>
@@ -259,7 +286,11 @@ QGroupBox::title {
               </layout>
              </item>
              <item row="0" column="0">
-              <widget class="QListWidget" name="surveyListWidget"/>
+              <widget class="QListWidget" name="surveyListWidget">
+               <property name="toolTip">
+                <string>Liste des sondages</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -312,7 +343,11 @@ QGroupBox::title {
             </property>
             <layout class="QGridLayout" name="gridLayout_8">
              <item row="0" column="0">
-              <widget class="QListWidget" name="questionsListWidget"/>
+              <widget class="QListWidget" name="questionsListWidget">
+               <property name="toolTip">
+                <string>Liste des questions</string>
+               </property>
+              </widget>
              </item>
              <item row="0" column="1">
               <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -331,6 +366,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="addQuestionButton">
+                 <property name="toolTip">
+                  <string>Ajouter une question</string>
+                 </property>
                  <property name="text">
                   <string>Ajouter</string>
                  </property>
@@ -338,6 +376,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="editQuestionButton">
+                 <property name="toolTip">
+                  <string>Modifier une question</string>
+                 </property>
                  <property name="text">
                   <string>Modifier</string>
                  </property>
@@ -345,6 +386,9 @@ QGroupBox::title {
                </item>
                <item>
                 <widget class="QPushButton" name="deleteQuestionButton">
+                 <property name="toolTip">
+                  <string>Supprimer une question</string>
+                 </property>
                  <property name="text">
                   <string>Supprimer</string>
                  </property>
@@ -384,7 +428,14 @@ QGroupBox::title {
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="nameSurveyLineEdit"/>
+                <widget class="QLineEdit" name="nameSurveyLineEdit">
+                 <property name="toolTip">
+                  <string>Le nom de votre sondage</string>
+                 </property>
+                 <property name="statusTip">
+                  <string/>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -411,6 +462,15 @@ QGroupBox::title {
     </item>
    </layout>
   </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -424,24 +484,42 @@ QGroupBox::title {
     <property name="title">
      <string>Aide</string>
     </property>
+    <addaction name="actionAfficher_aide"/>
+    <addaction name="actionA_Propos"/>
    </widget>
    <widget class="QMenu" name="menuFichier">
     <property name="title">
      <string>Fichier</string>
     </property>
+    <addaction name="actionSe_d_connecter_2"/>
+    <addaction name="actionQuitter"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuAide"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionA_Propos">
+   <property name="text">
+    <string>À Propos...</string>
+   </property>
+   <property name="toolTip">
+    <string>À Propos</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionSe_d_connecter_2">
+   <property name="text">
+    <string>Se déconnecter</string>
+   </property>
+  </action>
+  <action name="actionAfficher_aide">
+   <property name="text">
+    <string>Afficher aide</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -6,23 +6,25 @@
 
 QT       += core gui
 QT       += sql
-QT       += widgets
+QT       += webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = admin-app
 TEMPLATE = app
-TRANSLATIONS = qt_fr.qm
 
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    questiondialog.cpp
+    questiondialog.cpp \
+    helpdialog.cpp
 
 HEADERS  += mainwindow.h \
-    questiondialog.h
+    questiondialog.h \
+    helpdialog.h
 
 FORMS    += mainwindow.ui \
-    questiondialog.ui
+    questiondialog.ui \
+    helpdialog.ui
 
 DISTFILES +=

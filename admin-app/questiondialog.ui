@@ -36,7 +36,11 @@ QGroupBox::title {
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QPlainTextEdit" name="plainTextEdit"/>
+         <widget class="QPlainTextEdit" name="plainTextEdit">
+          <property name="toolTip">
+           <string>L'intitulé de votre question</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -53,11 +57,14 @@ QGroupBox::title {
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
              <widget class="QListWidget" name="listWidget">
+              <property name="toolTip">
+               <string>Liste des réponses</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
               <property name="editTriggers">
-               <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked</set>
+               <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
               </property>
               <property name="tabKeyNavigation">
                <bool>true</bool>
@@ -99,6 +106,9 @@ QGroupBox::title {
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
              <widget class="QPushButton" name="pushButton">
+              <property name="toolTip">
+               <string>Ajouter une réponse</string>
+              </property>
               <property name="text">
                <string>Ajouter</string>
               </property>
@@ -106,6 +116,9 @@ QGroupBox::title {
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_2">
+              <property name="toolTip">
+               <string>Supprimer une réponse</string>
+              </property>
               <property name="text">
                <string>Supprimer</string>
               </property>
@@ -157,8 +170,8 @@ QGroupBox::title {
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>608</x>
-     <y>380</y>
+     <x>100</x>
+     <y>390</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -173,8 +186,8 @@ QGroupBox::title {
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>676</x>
-     <y>380</y>
+     <x>168</x>
+     <y>390</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

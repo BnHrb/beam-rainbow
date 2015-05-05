@@ -83,76 +83,69 @@ void QuestionDialog::on_pushButton_2_clicked()
 
 void QuestionDialog::on_buttonBox_accepted()
 {
-    if(ui->plainTextEdit->toPlainText() == ""){
-        QMessageBox::StandardButton reply;
-        reply = QMessageBox::warning(this, "Oubli ?", "Vous n'avez pas intitulé de question, voulez vous quand même continuer ?", QMessageBox::Yes|QMessageBox::No);
+    if(!edit){
+        QSqlQuery query;
+        query.prepare("INSERT INTO questions (valeur, choix_multiple, champs_libre, sondage_id) VALUES (:valeur, :mul, :num, :s_id)");
+        query.bindValue(":valeur", ui->plainTextEdit->toPlainText());
+        query.bindValue(":mul", ui->checkBox->isChecked());
+        query.bindValue(":num", ui->checkBox_2->isChecked());
+        query.bindValue(":s_id", sondage_id);
+        query.exec();
+
+        int id = query.lastInsertId().toInt();
+        while(query.next())
+            id = query.value(0).toInt();
+
+        QSqlDatabase::database().transaction();
+        QSqlQuery answer;
+        for(int i=0; i < ui->listWidget->count(); i++){
+            answer.prepare("INSERT INTO choixes (valeur, question_id) VALUES (:valeur, :id)");
+            answer.bindValue(":valeur", ui->listWidget->item(i)->text());
+            answer.bindValue(":id", id);
+            answer.exec();
+        }
+        QSqlDatabase::database().commit();
+
+        QListWidgetItem *item = new QListWidgetItem(ui->plainTextEdit->toPlainText());
+        QVariant v;
+        v.setValue(id);
+        item->setData(Qt::UserRole, v);
+        qList->addItem(item);
     }
     else{
-        if(!edit){
-            QSqlQuery query;
-            query.prepare("INSERT INTO questions (valeur, choix_multiple, champs_libre, sondage_id) VALUES (:valeur, :mul, :num, :s_id)");
-            query.bindValue(":valeur", ui->plainTextEdit->toPlainText());
-            query.bindValue(":mul", ui->checkBox->isChecked());
-            query.bindValue(":num", ui->checkBox_2->isChecked());
-            query.bindValue(":s_id", sondage_id);
-            query.exec();
+        QSqlQuery query;
+        query.prepare("UPDATE questions SET valeur = :valeur, choix_multiple = :mul, champs_libre = :num WHERE id = :id");
+        query.bindValue(":valeur", ui->plainTextEdit->toPlainText());
+        query.bindValue(":mul", ui->checkBox->isChecked());
+        query.bindValue(":num", ui->checkBox_2->isChecked());
+        query.bindValue(":id", question_id);
+        query.exec();
 
-            int id = query.lastInsertId().toInt();
-            while(query.next())
-                id = query.value(0).toInt();
-
-            QSqlDatabase::database().transaction();
-            QSqlQuery answer;
-            for(int i=0; i < ui->listWidget->count(); i++){
-                answer.prepare("INSERT INTO choixes (valeur, question_id) VALUES (:valeur, :id)");
+        QSqlDatabase::database().transaction();
+        QSqlQuery answer;
+        for(int i=0; i < ui->listWidget->count(); i++){
+            if(ui->listWidget->item(i)->data(Qt::UserRole).value<int>() > 0){
+                answer.prepare("UPDATE choixes SET valeur = :valeur WHERE id = :id");
                 answer.bindValue(":valeur", ui->listWidget->item(i)->text());
-                answer.bindValue(":id", id);
+                answer.bindValue(":id", ui->listWidget->item(i)->data(Qt::UserRole).value<int>());
                 answer.exec();
             }
-            QSqlDatabase::database().commit();
-
-            QListWidgetItem *item = new QListWidgetItem(ui->plainTextEdit->toPlainText());
-            QVariant v;
-            v.setValue(id);
-            item->setData(Qt::UserRole, v);
-            qList->addItem(item);
-        }
-        else{
-            QSqlQuery query;
-            query.prepare("UPDATE questions SET valeur = :valeur, choix_multiple = :mul, champs_libre = :num WHERE id = :id");
-            query.bindValue(":valeur", ui->plainTextEdit->toPlainText());
-            query.bindValue(":mul", ui->checkBox->isChecked());
-            query.bindValue(":num", ui->checkBox_2->isChecked());
-            query.bindValue(":id", question_id);
-            query.exec();
-
-            QSqlDatabase::database().transaction();
-            QSqlQuery answer;
-            for(int i=0; i < ui->listWidget->count(); i++){
-                if(ui->listWidget->item(i)->data(Qt::UserRole).value<int>() > 0){
-                    answer.prepare("UPDATE choixes SET valeur = :valeur WHERE id = :id");
-                    answer.bindValue(":valeur", ui->listWidget->item(i)->text());
-                    answer.bindValue(":id", ui->listWidget->item(i)->data(Qt::UserRole).value<int>());
-                    answer.exec();
-                }
-                else{
-                    answer.prepare("INSERT INTO choixes (valeur, question_id) VALUES (:valeur, :id)");
-                    answer.bindValue(":valeur", ui->listWidget->item(i)->text());
-                    answer.bindValue(":id", question_id);
-                    answer.exec();
-                }
+            else{
+                answer.prepare("INSERT INTO choixes (valeur, question_id) VALUES (:valeur, :id)");
+                answer.bindValue(":valeur", ui->listWidget->item(i)->text());
+                answer.bindValue(":id", question_id);
+                answer.exec();
             }
-            QSqlDatabase::database().commit();
-
-            for(int i=0; i < remove.size(); i++){
-                QSqlQuery del;
-                del.prepare("DELETE FROM choixes WHERE id=(:id)");
-                del.bindValue(":id", remove[i]);
-                del.exec();
-            }
-
-            qList->currentItem()->setText(ui->plainTextEdit->toPlainText());
         }
+        QSqlDatabase::database().commit();
+
+        for(int i=0; i < remove.size(); i++){
+            QSqlQuery del;
+            del.prepare("DELETE FROM choixes WHERE id=(:id)");
+            del.bindValue(":id", remove[i]);
+            del.exec();
+        }
+
+        qList->currentItem()->setText(ui->plainTextEdit->toPlainText());
     }
-
 }

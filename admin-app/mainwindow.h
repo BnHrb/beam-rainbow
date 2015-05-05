@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "questiondialog.h"
+#include "helpdialog.h"
+
 #include <QMainWindow>
 #include <QSqlQuery>
 #include <QDebug>
@@ -39,6 +42,10 @@ private slots:
     void on_editQuestionButton_clicked();
 
     void on_logoutPushButton_clicked();
+
+    void on_actionA_Propos_triggered();
+
+    void on_actionAfficher_aide_triggered();
 
 private:
     Ui::MainWindow *ui;

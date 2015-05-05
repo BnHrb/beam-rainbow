@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "questiondialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -200,4 +199,16 @@ void MainWindow::on_editQuestionButton_clicked()
 void MainWindow::on_logoutPushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_actionA_Propos_triggered()
+{
+    QMessageBox::about(this, QString("À Propos..."), QString("\t    Beam Rainbow 1.0\n\nJean Bertrand - Benjamin Herb - Gwenaël Larmet\n\n\t    2015 - Licence MIT"));
+}
+
+void MainWindow::on_actionAfficher_aide_triggered()
+{
+    HelpDialog *hDialog = new HelpDialog(this);
+    hDialog->setModal(true);
+    hDialog->exec();
 }
