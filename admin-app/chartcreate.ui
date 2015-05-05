@@ -26,7 +26,7 @@
     <string>Annuler</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QRadioButton" name="radio_pourcent">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -75,7 +75,7 @@
       <string>Faire une moyenne</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_3">
+    <widget class="QComboBox" name="combopop">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -125,7 +125,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_5">
+    <widget class="QComboBox" name="combo_categ">
      <property name="geometry">
       <rect>
        <x>160</x>

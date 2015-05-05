@@ -25,6 +25,12 @@ private slots:
 
     void on_comboBox_question_currentIndexChanged(int index);
 
+    void on_comboBox_question_activated(const QString &arg1);
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::chartcreate *ui;
 };

@@ -10,6 +10,11 @@ Chart * Chart::load_all_chart(int id_sondage)
     return NULL;
 }
 
+bool Chart::save()
+{
+    return true;
+}
+
 /* setter */
 void Chart::set_id_sondage(int value)
 {
@@ -24,11 +29,6 @@ void Chart::set_id_question(int value)
 void Chart::set_reponse_given(int value)
 {
     this->reponse_given = value;
-}
-
-void Chart::set_id_reponse(int value)
-{
-    this->id_reponse = value;
 }
 
 void Chart::set_reponse_spe(bool value)
@@ -70,11 +70,6 @@ int Chart::set_id_question()
 int Chart::set_reponse_given()
 {
     return this->reponse_given;
-}
-
-int Chart::set_id_reponse()
-{
-    return this->id_reponse;
 }
 
 bool Chart::set_reponse_spe()
