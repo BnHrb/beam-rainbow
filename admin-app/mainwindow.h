@@ -3,6 +3,7 @@
 
 #include "questiondialog.h"
 #include "helpdialog.h"
+#include "chartcreate.h"
 
 #include <QMainWindow>
 #include <QSqlQuery>
@@ -50,6 +51,8 @@ private slots:
     void on_surveySeeResults_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

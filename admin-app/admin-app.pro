@@ -18,15 +18,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     questiondialog.cpp \
     helpdialog.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    chartcreate.cpp
 
 HEADERS  += mainwindow.h \
     questiondialog.h \
     helpdialog.h \
-    qcustomplot.h
+    qcustomplot.h \
+    chartcreate.h
 
 FORMS    += mainwindow.ui \
     questiondialog.ui \
-    helpdialog.ui
+    helpdialog.ui \
+    chartcreate.ui
 
 DISTFILES +=

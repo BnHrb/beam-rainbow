@@ -31,7 +31,7 @@ QGroupBox::title {
     <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="homePage">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -459,7 +459,7 @@ QGroupBox::title {
          </rect>
         </property>
         <property name="text">
-         <string>Ajouter un résultat</string>
+         <string>Ajouter un résultat...</string>
         </property>
        </widget>
        <widget class="QCustomPlot" name="widget_2" native="true">
