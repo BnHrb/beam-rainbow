@@ -1,14 +1,23 @@
 #include "chartcreate.h"
 #include "ui_chartcreate.h"
 
-chartcreate::chartcreate(QWidget *parent) :
+chartcreate::chartcreate(QWidget *parent, int idSondage) :
     QDialog(parent),
     ui(new Ui::chartcreate)
 {
     ui->setupUi(this);
-    ui->comboBox_question->addItem("Question 1","1");
-    ui->comboBox_question->addItem("Question 2","2");
-    ui->comboBox_question->addItem("Question 3","3");
+    this->chart.set_id_sondage(idSondage);
+    QSqlQuery query;
+    query.prepare("SELECT 'id_question' FROM questions WHERE sondage_id =(:idSondage)");
+    query.bindValue(":idSondage", idSondage);
+    query.exec();
+    int i = 0;
+    while (query.next())
+    {
+        i++;
+        ui->comboBox_question->addItem("Question "+ QString::number(i),
+                                       query.value("id_question").toString()); //id_question
+    }
 }
 
 chartcreate::~chartcreate()

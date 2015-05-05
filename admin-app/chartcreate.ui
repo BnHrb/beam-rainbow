@@ -59,7 +59,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QRadioButton" name="radioButton_2">
@@ -84,6 +84,21 @@
        <height>31</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Tout le monde</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Femmes seulement</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hommes seulement</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
@@ -119,6 +134,36 @@
        <height>27</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Sexe</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tranche d'age</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Taille de la famille</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Nombre d'enfants</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Nombre d'animaux</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Revenus</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="label_5">
      <property name="geometry">

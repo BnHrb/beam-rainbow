@@ -225,7 +225,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    chartcreate *chartDialog = new chartcreate(this);
+    chartcreate *chartDialog = new chartcreate(this, 15);
     chartDialog->setModal(true);
     chartDialog->exec();
 }
