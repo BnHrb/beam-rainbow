@@ -31,7 +31,7 @@ QGroupBox::title {
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="homePage">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -318,15 +318,6 @@ QGroupBox::title {
          </layout>
         </item>
        </layout>
-       <zorder>surveyEditButton</zorder>
-       <zorder>surveyDeleteButton</zorder>
-       <zorder>surveyAddButton</zorder>
-       <zorder>pushButton_2</zorder>
-       <zorder>groupBox_2</zorder>
-       <zorder>logoutPushButton</zorder>
-       <zorder>logoutPushButton</zorder>
-       <zorder>logoutPushButton</zorder>
-       <zorder>label_3</zorder>
        <zorder></zorder>
       </widget>
       <widget class="QWidget" name="page">
@@ -441,7 +432,6 @@ QGroupBox::title {
              </item>
             </layout>
             <zorder></zorder>
-            <zorder>nameSurveyLineEdit</zorder>
            </widget>
           </item>
           <item row="2" column="0">
@@ -504,20 +494,32 @@ QGroupBox::title {
    <property name="toolTip">
     <string>À Propos</string>
    </property>
+   <property name="shortcut">
+    <string>Meta+A</string>
+   </property>
   </action>
   <action name="actionQuitter">
    <property name="text">
     <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+Q</string>
    </property>
   </action>
   <action name="actionSe_d_connecter_2">
    <property name="text">
     <string>Se déconnecter</string>
    </property>
+   <property name="shortcut">
+    <string>Meta+D</string>
+   </property>
   </action>
   <action name="actionAfficher_aide">
    <property name="text">
     <string>Afficher aide</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+H</string>
    </property>
   </action>
  </widget>

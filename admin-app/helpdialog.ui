@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Aide</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
@@ -28,7 +28,7 @@
     <widget class="QWebView" name="webView">
      <property name="url">
       <url>
-       <string>http://www.google.fr/</string>
+       <string>about:blank</string>
       </url>
      </property>
     </widget>
@@ -51,8 +51,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>254</x>
+     <y>370</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -67,8 +67,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>322</x>
+     <y>370</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

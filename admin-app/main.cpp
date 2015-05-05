@@ -21,10 +21,6 @@ int main(int argc, char *argv[])
         qDebug() << "Connected!";
     }
 
-    QTranslator trans(0);
-    trans.load("qt_fr", ".");
-    a.installTranslator(&trans);
-
     MainWindow w;
     w.show();
 
