@@ -19,6 +19,8 @@ public:
     Chart chart;
 
 private slots:
+    void repaintplot();
+
     void on_type_chart_combo_currentIndexChanged(int index);
 
     void on_type_chart_combo_currentIndexChanged(const QString &arg1);
