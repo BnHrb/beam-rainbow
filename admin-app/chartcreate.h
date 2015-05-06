@@ -23,11 +23,11 @@ private slots:
 
     void on_type_chart_combo_currentIndexChanged(int index);
 
-    void on_type_chart_combo_currentIndexChanged(const QString &arg1);
+    //void on_type_chart_combo_currentIndexChanged(const QString &arg1);
 
     void on_comboBox_question_currentIndexChanged(int index);
 
-    void on_comboBox_question_activated(const QString &arg1);
+    //void on_comboBox_question_activated(const QString &arg1);
 
     void on_pushButton_clicked();
 

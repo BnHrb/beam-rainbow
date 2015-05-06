@@ -8,7 +8,7 @@ QT       += core gui
 QT       += sql
 QT       += webkitwidgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = admin-app
 TEMPLATE = app
